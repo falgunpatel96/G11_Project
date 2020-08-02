@@ -13,37 +13,11 @@ class AppHeader extends Component {
           <Navbar.Brand href="/">
             <img className="logoimage" src={logoimage} alt="logo" />
           </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            className="text-light font-weight-bold"
-          >
-            Menu
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav>
-              <Nav.Link className="text-light font-weight-bold" href="/login">
-                Login
-              </Nav.Link>
-              <Nav.Link
-                className="text-light font-weight-bold"
-                href="/register"
-              >
-                Register
-              </Nav.Link>
-              <Nav.Link
-                className="text-light font-weight-bold"
-                href="/about-us"
-              >
-                About Us
-              </Nav.Link>
-              <Nav.Link
-                className="text-light font-weight-bold"
-                href="/contact-us"
-              >
-                Contact Us
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav style={{ marginRight: 0, marginLeft: "auto" }} id="login-button">
+            <Nav.Link className="text-light font-weight-bold" href="/login">
+              Login
+            </Nav.Link>
+          </Nav>
         </Navbar>
       </section>
     );

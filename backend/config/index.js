@@ -2,7 +2,7 @@ module.exports = {
   mySQLConfig: {
     host: "webgroup11db.ckwpe1lbmfqz.us-east-1.rds.amazonaws.com",
     user: "admin",
-    password: "admin1234",
+    password: "KpFjM123#456$",
     database: "webproject",
     port: 3306,
   },

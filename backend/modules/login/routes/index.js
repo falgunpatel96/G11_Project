@@ -8,13 +8,20 @@ const { LoginController } = require("../controllers/LoginController");
 login_router.post("/", (req, res) => {
     try {
         let userData = req.body.data;
-        console.log(userData);
 
         LoginController(userData, (response) => {
-            if (response === "4")
-                return res.status(200).send("User logged in successfully!");
-            else
-                return res.status(403).send("User does not exists!");
+            let frontendResponse = {}
+
+            if (response["code"] === "4") {
+                frontendResponse["message"] = "User logged in successfully!";
+                frontendResponse["userid"] = response["userDetails"]["userid"];
+                frontendResponse["role"] = response["userDetails"]["role"]
+                return res.status(200).send(frontendResponse);
+            }
+            else {
+                frontendResponse["message"] = "User does not exists!";
+                return res.status(403).send(frontendResponse);
+            }
         });
     } catch (err) {
         console.log("err", err);

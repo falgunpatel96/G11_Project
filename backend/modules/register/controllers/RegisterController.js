@@ -37,7 +37,7 @@ const RegisterController = (userData, response) => {
 
     database.query(create_user_query, function (error, result) {
         if (error) {
-            throw error;
+            console.log(error);
         }
         console.log("User created successfully");
     });

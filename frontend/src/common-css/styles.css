@@ -10,7 +10,8 @@
     min-height: 400px;
 }
 
-.navHeader,.navHeader-authenticated  {
+.navHeader,
+.navHeader-authenticated {
     position: "fixed";
     background-color: #2888d1;
     margin: 0px auto;
@@ -35,7 +36,7 @@
 
 .jumbotron {
     padding: 70px 30px 70px 30px;
-    margin:  0px auto;
+    margin: 0px auto;
     background: #9575cd;
     color: floralwhite;
 }
@@ -47,20 +48,21 @@
 /* .text-center{
     margin-top: 10vh !important;
 } */
-.align-center{
-position:"absolute"; top:"50%"; 
+.align-center {
+    position: "absolute";
+    top: "50%";
 }
 
 
-.centerDiv{
+.centerDiv {
     margin: auto;
 }
 
-.App{
+.App {
     padding-bottom: 1em;
 }
 
-.logoimage{
+.logoimage {
     padding-top: 0.2em;
     padding-right: 0.5em;
     width: 9.25em;
@@ -72,3 +74,7 @@ position:"absolute"; top:"50%";
 .custom-link {
     color: white;
 }
+
+/* #login-button {
+    display: none;
+} */

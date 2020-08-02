@@ -15,19 +15,28 @@ const LoginController = (userData, response) => {
     let email = userData.email;
     let password = userData.password;
 
-    let select_user_query = `SELECT userName from webproject.User where email='${email}' and password='${password}'`;
+    let select_user_query = `SELECT userid, userName, role from webproject.User where email='${email}' and password='${password}'`;
 
     database.query(select_user_query, function (error, result) {
+        userDetails = {};
+        responseDetails = {};
         if (error) {
-            response("1")
+            responseDetails["code"] = "1";
+            responseDetails["userDetails"] = {};
+            response(responseDetails);
+
             throw error;
         }
 
         result = JSON.parse(JSON.stringify(result))
         if (result.length === 0) {
-            response("1");
+            responseDetails["code"] = "1";
+            responseDetails["userDetails"] = {};
+            response(responseDetails);
         } else {
-            response("4");
+            responseDetails["code"] = "4";
+            responseDetails["userDetails"] = result[0];
+            response(responseDetails);
         }
 
         console.log(result);

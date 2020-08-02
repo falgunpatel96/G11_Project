@@ -16,6 +16,8 @@ class HomePageHeader extends Component {
     auth.logout(() => {
       if (localStorage.getItem("authenticated") !== null) {
         localStorage.removeItem("authenticated");
+        localStorage.removeItem("userid");
+        localStorage.removeItem("role");
       }
       this.props.history.push("/");
     });
